@@ -29,7 +29,7 @@ class _FoodInfo extends StatelessWidget {
           Expanded(flex: 2, child: _TopBar()),
           Expanded(flex: 4, child: _UserInfo()),
           Expanded(
-            flex: 2, 
+            flex: 3, 
             child: 
             Container(
               margin: const EdgeInsets.only(top: 15.0, bottom: 15.0),
@@ -51,7 +51,7 @@ class _FoodInfo extends StatelessWidget {
                         errorBorder: InputBorder.none,
                         disabledBorder: InputBorder.none,
                         border: InputBorder.none,
-                        contentPadding:EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15), 
+                        contentPadding:EdgeInsets.only(left: 15, right: 15), 
                         hintText: "Search place",
                       ),
                     ),
@@ -70,28 +70,31 @@ class _FoodInfo extends StatelessWidget {
             ),
           ),
           Expanded(
-              flex: 3,
-              child: Column(children: [
-                Row(
-                  children: [
-                    CreateButton(text: "Burger",selected: true,),
-                    SizedBox(width: 24),
-                    CreateButton(text: "Pizza"),
-                    SizedBox(width: 24),
-                    CreateButton(text: "Sandwitch"),
-                  ],
-                ),
-                SizedBox(height: 15),
-                Row(
-                  children: [
-                    CreateButton(text: "Sauces"),
-                    SizedBox(width: 24),
-                    CreateButton(text: "Others"),
-                  ],
-                ),
-              ])),
+              flex: 4,
+              child: Column(
+                children: [
+                  Spacer(),
+                  Row(
+                    children: [
+                      CreateButton(text: "Burger",selected: true,),
+                      SizedBox(width: 24),
+                      CreateButton(text: "Pizza"),
+                      SizedBox(width: 24),
+                      CreateButton(text: "Sandwitch"),
+                    ],
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    children: [
+                      CreateButton(text: "Sauces"),
+                      SizedBox(width: 24),
+                      CreateButton(text: "Others"),
+                    ],
+                  ),
+              ]),
+              ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Container(
               alignment: Alignment.centerRight,
               child: FlatButton(
@@ -103,7 +106,7 @@ class _FoodInfo extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 7,
+            flex: 12,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -116,7 +119,7 @@ class _FoodInfo extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 3,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -131,7 +134,7 @@ class _FoodInfo extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -209,6 +212,7 @@ class _UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Hi David,",
             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
