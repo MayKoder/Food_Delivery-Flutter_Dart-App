@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/create_button.dart';
+import '../widgets/foodCard.dart';
 
 class FoodInfoScreen extends StatelessWidget {
   @override
@@ -25,27 +27,44 @@ class _FoodInfo extends StatelessWidget {
         children: [
           Expanded(flex: 2, child: _TopBar()),
           Expanded(flex: 4, child: _UserInfo()),
-          Expanded(flex: 2, 
-            child: Row(children: [
-              Icon(Icons.search),
-              // FlatButton(
-              //   onPressed: (){}, 
-              //   child: Icon(Icons.filter_list_outlined, color: Colors.white,), 
-              //   color: Colors.orange[900],
-              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              // )
-            ],),
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                Icon(Icons.search),
+                // FlatButton(
+                //   onPressed: (){},
+                //   child: Icon(Icons.filter_list_outlined, color: Colors.white,),
+                //   color: Colors.orange[900],
+                //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                // )
+              ],
+            ),
           ),
           Expanded(
               flex: 3,
               child: Column(children: [
                 Row(
                   children: [
-                    _CreateButton("Burger", autoFocused: true),
-                    SizedBox(width: 24),
-                    _CreateButton("Pizza"),
-                    SizedBox(width: 24),
-                    _CreateButton("Sandwitch")
+                    CreateButton(text: "hola",selected: true),
+                    FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Text(
+                        "text",
+                        style: TextStyle(color: Colors.grey[500]),
+                      ),
+                      autofocus: true,
+                      focusColor: Colors.orange[900],
+                      color: Colors.grey[200],
+                      hoverColor: Colors.orange[700],
+                      onPressed: () {},
+                    ),
+                    // _CreateButton("Burger", autoFocused: true),
+                    // SizedBox(width: 24),
+                    // _CreateButton("Pizza"),
+                    // SizedBox(width: 24),
+                    // _CreateButton("Sandwitch")
                   ],
                 ),
                 SizedBox(height: 15),
@@ -65,37 +84,23 @@ class _FoodInfo extends StatelessWidget {
                 textColor: Color(0xFF6200EE),
                 onPressed: () {},
                 child: Text("see more",
-                    style: TextStyle(color: Colors.orange[900])),
+                    style: TextStyle(fontSize: 17, color: Colors.orange[800])),
               ),
             ),
           ),
           Expanded(
-              flex: 6,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column
-                  (
-                    children: [             
-                      Expanded(child: Image(image: AssetImage('Burger1.png'))),
-                      Expanded(child: Text("Double Patty Burger", style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold))),
-                      Expanded(child: Text("Hot Spicy with garlic")),
-                      Expanded(child: Text("\$25.00", style: TextStyle(fontWeight: FontWeight.bold))), 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Text("Hola"),
-                          ),
-                      ],),
-                    ],
-                  ),
-                  
-                  Text("ham2")
-                ],
-              )),
+            flex: 7,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                FoodCard("Burger1.png", "Double Patty Burger",
+                    "Hot Spicy with garlic", "25.00"),
+                SizedBox(width: 35),
+                FoodCard("Burger2.png", "Nagga Beef Burger",
+                    "Hot Spicy with garlic", "30.00"),
+              ],
+            ),
+          ),
           Expanded(
             flex: 1,
             child: Row(
