@@ -28,9 +28,6 @@ class _FoodInfo extends StatelessWidget {
           Expanded(flex: 2, 
             child: Row(children: [
               Icon(Icons.search),
-              // TextField(
-                
-              // )
               FlatButton(
                 onPressed: (){}, 
                 child: Icon(Icons.filter_list_outlined, color: Colors.white,), 
@@ -88,7 +85,10 @@ class _FoodInfo extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                        Text("Hola"),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Text("Hola"),
+                          ),
                       ],),
                     ],
                   ),
