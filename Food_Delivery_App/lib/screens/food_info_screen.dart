@@ -194,7 +194,7 @@ class _TopBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Icon(
-          Icons.list,
+          Icons.dehaze,
           size: 36,
         ),
         Icon(
