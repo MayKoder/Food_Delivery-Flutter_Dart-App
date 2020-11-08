@@ -15,7 +15,7 @@ class FoodCard extends StatelessWidget {
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.1),spreadRadius: 8,blurRadius: 12,offset: Offset(0,8))],
+          boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.05),spreadRadius: 8,blurRadius: 12,offset: Offset(0,8))],
           borderRadius: BorderRadius.all(
             Radius.circular(20.0),
           ),

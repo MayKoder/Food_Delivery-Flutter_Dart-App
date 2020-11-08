@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CreateButton extends StatelessWidget {
+class CreateButton extends StatefulWidget {
   final String text;
-  final bool selected;
+  bool selected;
   CreateButton({
     @required this.text,
     this.selected = false,
@@ -10,17 +10,27 @@ class CreateButton extends StatelessWidget {
   );
 
   @override
+  _CreateButtonState createState() => _CreateButtonState();
+}
+
+class _CreateButtonState extends State<CreateButton> {
+  @override
   Widget build(BuildContext context) {
     return FlatButton(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       child: Text(
-        text,
+        widget.text,
         style:
-            TextStyle(color: selected ? Colors.grey[300] : Colors.grey[500]),
+            TextStyle(color: widget.selected ? Colors.grey[300] : Colors.grey[500]),
       ),
-      color: selected? Colors.orange[900]: Colors.grey[200],
+      color: widget.selected? Colors.orange[900]: Colors.grey[200],
       hoverColor: Colors.orange[700],
-      onPressed: () {},
+      onPressed: () {
+        setState(() {
+        widget.selected = !widget.selected;
+          
+        });
+      },
     );
   }
 }

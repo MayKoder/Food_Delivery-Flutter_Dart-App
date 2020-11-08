@@ -20,6 +20,7 @@ class FoodInfoScreen extends StatelessWidget {
 class _FoodInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: EdgeInsets.all(32),
       child: Column(
@@ -46,33 +47,19 @@ class _FoodInfo extends StatelessWidget {
               child: Column(children: [
                 Row(
                   children: [
-                    CreateButton(text: "hola",selected: true),
-                    FlatButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Text(
-                        "text",
-                        style: TextStyle(color: Colors.grey[500]),
-                      ),
-                      autofocus: true,
-                      focusColor: Colors.orange[900],
-                      color: Colors.grey[200],
-                      hoverColor: Colors.orange[700],
-                      onPressed: () {},
-                    ),
-                    // _CreateButton("Burger", autoFocused: true),
-                    // SizedBox(width: 24),
-                    // _CreateButton("Pizza"),
-                    // SizedBox(width: 24),
-                    // _CreateButton("Sandwitch")
+                    CreateButton(text: "Burger",selected: true,),
+                    SizedBox(width: 24),
+                    CreateButton(text: "Pizza"),
+                    SizedBox(width: 24),
+                    CreateButton(text: "Sandwitch"),
                   ],
                 ),
                 SizedBox(height: 15),
                 Row(
                   children: [
-                    _CreateButton("Sauces"),
+                    CreateButton(text: "Sauces"),
                     SizedBox(width: 24),
-                    _CreateButton("Others"),
+                    CreateButton(text: "Others"),
                   ],
                 ),
               ])),
