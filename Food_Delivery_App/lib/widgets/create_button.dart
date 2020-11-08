@@ -17,11 +17,13 @@ class _CreateButtonState extends State<CreateButton> {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
+      height: 40,
+      minWidth: 10,
+      padding: EdgeInsets.symmetric(horizontal: 25),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: Text(
-        widget.text,
+      child: Text( widget.text,
         style:
-            TextStyle(color: widget.selected ? Colors.grey[300] : Colors.grey[500]),
+            TextStyle(fontSize: 16,color: widget.selected ? Colors.grey[300] : Colors.grey[500]),
       ),
       color: widget.selected? Colors.orange[900]: Colors.grey[200],
       hoverColor: Colors.orange[700],
