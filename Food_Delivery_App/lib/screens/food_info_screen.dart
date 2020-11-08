@@ -25,7 +25,20 @@ class _FoodInfo extends StatelessWidget {
         children: [
           Expanded(flex: 2, child: _TopBar()),
           Expanded(flex: 4, child: _UserInfo()),
-          Expanded(flex: 2, child: Text("data3") /* Search Bar*/),
+          Expanded(flex: 2, 
+            child: Row(children: [
+              Icon(Icons.search),
+              // TextField(
+                
+              // )
+              FlatButton(
+                onPressed: (){}, 
+                child: Icon(Icons.filter_list_outlined, color: Colors.white,), 
+                color: Colors.orange[900],
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              )
+            ],),
+          ),
           Expanded(
               flex: 3,
               child: Column(children: [
@@ -51,13 +64,40 @@ class _FoodInfo extends StatelessWidget {
             flex: 1,
             child: Container(
               alignment: Alignment.centerRight,
-              child:
-                  Text("see more", style: TextStyle(color: Colors.orange[900])),
+              child: FlatButton(
+                textColor: Color(0xFF6200EE),
+                onPressed: () {},
+                child: Text("see more",
+                    style: TextStyle(color: Colors.orange[900])),
+              ),
             ),
           ),
-          Expanded(flex: 4, child: Row(children: [Text("ham1"),Text("ham2")],)),
           Expanded(
-            flex: 5,
+              flex: 6,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column
+                  (
+                    children: [             
+                      Expanded(child: Image(image: AssetImage('Burger1.png'))),
+                      Expanded(child: Text("Double Patty Burger", style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold))),
+                      Expanded(child: Text("Hot Spicy with garlic")),
+                      Expanded(child: Text("\$25.00", style: TextStyle(fontWeight: FontWeight.bold))), 
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                        Text("Hola"),
+                      ],),
+                    ],
+                  ),
+                  
+                  Text("ham2")
+                ],
+              )),
+          Expanded(
+            flex: 1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -77,15 +117,32 @@ class _FoodInfo extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                Icon(Icons.home,size: 35,color: Colors.grey[100],),
-                Icon(Icons.favorite_outline,size: 35,color: Colors.grey[100],),
-                Icon(Icons.shopping_cart_outlined,size: 35,color: Colors.grey[100],),
-                Icon(Icons.person_outline,size: 35,color: Colors.grey[100],),
-              ],),
+                  Icon(
+                    Icons.home,
+                    size: 35,
+                    color: Colors.grey[100],
+                  ),
+                  Icon(
+                    Icons.favorite_outline,
+                    size: 35,
+                    color: Colors.grey[100],
+                  ),
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 35,
+                    color: Colors.grey[100],
+                  ),
+                  Icon(
+                    Icons.person_outline,
+                    size: 35,
+                    color: Colors.grey[100],
+                  ),
+                ],
+              ),
               decoration: BoxDecoration(
                   color: Colors.orange[900],
                   borderRadius: BorderRadius.all(Radius.circular(60))),
-             ),
+            ),
           ),
         ],
       ),
