@@ -28,12 +28,12 @@ class _FoodInfo extends StatelessWidget {
           Expanded(flex: 2, 
             child: Row(children: [
               Icon(Icons.search),
-              FlatButton(
-                onPressed: (){}, 
-                child: Icon(Icons.filter_list_outlined, color: Colors.white,), 
-                color: Colors.orange[900],
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              )
+              // FlatButton(
+              //   onPressed: (){}, 
+              //   child: Icon(Icons.filter_list_outlined, color: Colors.white,), 
+              //   color: Colors.orange[900],
+              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              // )
             ],),
           ),
           Expanded(
