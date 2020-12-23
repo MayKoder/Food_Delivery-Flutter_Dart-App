@@ -7,7 +7,6 @@ class MainScreen extends StatelessWidget {
     final db = FirebaseFirestore.instance;
     final users = db.collection('users');
     return StreamBuilder(
-      
         stream: db.collection('users').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           final docs = snapshot.data.docs;
@@ -16,8 +15,12 @@ class MainScreen extends StatelessWidget {
             appBar: AppBar(title: Text("Battle Training")),
             body: Column(
               children: [
-                Container(child: Text('${docs[0].data()["uid"]}'),),
-                RaisedButton(onPressed: (){users.doc("jordi").update({'uid':20});}),
+                Container(
+                  child: Text('${docs[0].data()["uid"]}'),
+                ),
+                RaisedButton(onPressed: () {
+                  users.doc("jordi").update({'uid': 30});
+                }),
               ],
             ),
           );
